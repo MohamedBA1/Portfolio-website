@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-zinc-950 text-zinc-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-zinc-50 font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-zinc-900/50 backdrop-blur-md border border-zinc-800/50 shadow-[0_0_15px_rgba(20,184,166,0.1)];
+  }
+  
+  .glass-card {
+    @apply bg-zinc-950 border border-zinc-800/50 hover:bg-zinc-900 hover:border-accent-500/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.2)] hover:-translate-y-1 relative overflow-hidden;
+  }
+  
+  /* Add subtle glow line effect inside cards */
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 bg-gradient-to-br from-accent-500/10 via-transparent to-transparent transition-opacity duration-500 pointer-events-none;
+  }
+  .glass-card:hover::before {
+    @apply opacity-100;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500;
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-400 to-accent-600;
+  }
+  
+  /* Futuristic Grid Background */
+  .cyber-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(20, 184, 166, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(20, 184, 166, 0.05) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  }
+  
+  .cyber-grid-wrapper {
+    @apply fixed inset-0 z-[-1] pointer-events-none overflow-hidden;
+  }
+
+  .cyber-grid-container {
+    @apply absolute inset-[-100%] w-[300%] h-[300%];
+    perspective: 1000px;
+    transform: rotateX(60deg) translateY(-100px) translateZ(-200px);
+    animation: grid-move 20s linear infinite;
+  }
+
+  @keyframes grid-move {
+    0% {
+      transform: rotateX(60deg) translateY(0) translateZ(-200px);
+    }
+    100% {
+      transform: rotateX(60deg) translateY(40px) translateZ(-200px);
+    }
+  }
+}
