@@ -3,13 +3,14 @@ import SectionHeader from '../components/SectionHeader';
 import { motion } from 'framer-motion';
 import profileImage from '../assets/profile.png';
 import Canvas3D from '../components/Canvas3D';
+import { TiltCard } from '../components/TiltCard';
 
 const skills = {
   "Front-End Development": ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Responsive Web Development", "Component-Based Development", "API Integration", "UI Implementation", "Modern UI Development", "Git", "GitHub"],
   "Business & System Analysis": ["Requirements Gathering & Analysis", "Business Process Analysis", "Functional Requirements", "System Analysis & Design", "Workflow Analysis", "Business Problem Identification", "Solution Definition", "Stakeholder & Client Communication", "Business & Market Analysis", "Data-Driven Decision Support", "UI/UX Collaboration"],
   "Software Testing & Quality": ["Software Testing", "Functional Testing", "System Testing", "UI Testing", "Test Scenario Design", "Requirements Validation", "Bug Identification & Reporting", "Feature Validation", "Release & Acceptance Testing"],
   "Data & Technical Background": ["SQL", "Excel", "Power BI", "Python", "Pandas", "Data Analysis", "Data Visualization", "Database Design & Fundamentals", "Object-Oriented Programming", "Programming Fundamentals", "C#", "Data Structures"],
-  "AI & Modern Development": ["AI-Assisted Development", "AI Tools for Software Development", "AI-Based Research & Problem Solving", "AI-Assisted Code Generation & Review", "Development Productivity & Automation"]
+  "Modern Development & Productivity": ["Developer Tooling & Workflow", "Code Review & Best Practices", "Research & Problem Solving", "Development Productivity & Automation", "Technical Documentation", "Agile & Iterative Development"]
 };
 
 const About = () => {
@@ -18,8 +19,8 @@ const About = () => {
       
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col-reverse md:flex-row items-center justify-center gap-12 py-20 relative">
-        {/* 3D Canvas Background Element */}
-        <div className="absolute inset-0 z-0 opacity-40">
+        {/* Interactive Isometric Hairline Laptop Element */}
+        <div className="absolute inset-0 z-0 opacity-70 md:opacity-85 pointer-events-auto flex items-center justify-center md:justify-end md:pr-12">
           <Canvas3D />
         </div>
 
@@ -97,19 +98,24 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Object.entries(skills).map(([category, items], idx) => (
             <AnimatedContainer key={category} delay={0.1 * idx}>
-              <div className="glass-card p-8 rounded-2xl h-full">
-                <h3 className="text-xl font-semibold mb-6 text-accent-400">{category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {items.map((skill) => (
-                    <span 
-                      key={skill} 
-                      className="px-4 py-2 text-sm bg-black/80 border border-zinc-800 rounded-lg text-zinc-300 hover:border-accent-500/50 hover:text-accent-300 transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+              <TiltCard className="rounded-2xl h-full" glowColor="rgba(20, 184, 166, 0.22)">
+                <div className="glass-card p-8 rounded-2xl h-full border border-zinc-800/60 bg-zinc-950/70 backdrop-blur-xl">
+                  <h3 className="text-xl font-semibold mb-6 text-accent-400 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent-400 animate-ping inline-block"></span>
+                    {category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill) => (
+                      <span 
+                        key={skill} 
+                        className="px-4 py-2 text-sm bg-black/80 border border-zinc-800/80 rounded-lg text-zinc-300 hover:border-accent-500 hover:text-accent-300 hover:scale-105 hover:bg-accent-950/20 transition-all duration-300 cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </TiltCard>
             </AnimatedContainer>
           ))}
         </div>

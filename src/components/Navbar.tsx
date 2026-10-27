@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from './ThemeProvider';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +30,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold tracking-wider text-black dark:text-zinc-100 relative group">
+          <Link to="/" className="text-xl font-bold tracking-wider text-zinc-100 relative group">
             MOHAMED YASSEN
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
@@ -45,33 +43,18 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   `text-sm font-medium transition-colors duration-300 hover:text-accent-400 ${
-                    isActive ? 'text-accent-400' : 'text-black dark:text-zinc-400'
+                    isActive ? 'text-accent-400' : 'text-zinc-400'
                   }`
                 }
               >
                 {link.name}
               </NavLink>
             ))}
-            
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-white dark:hover:bg-zinc-800 text-black dark:text-zinc-400 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
           </nav>
 
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-white dark:hover:bg-zinc-800 text-black dark:text-zinc-400 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+          <div className="md:hidden flex items-center">
             <button 
-              className="text-black dark:text-zinc-300 hover:text-black dark:hover:text-white"
+              className="text-zinc-300 hover:text-white p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >

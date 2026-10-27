@@ -10,14 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lucasmarkes/hairline": "^0.5.1",
+    "@react-three/drei": "^9.102.1",
+    "@react-three/fiber": "^8.15.19",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.344.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
-    "three": "^0.162.0",
-    "@react-three/fiber": "^8.15.19",
-    "@react-three/drei": "^9.102.1"
+    "three": "^0.162.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

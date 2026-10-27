@@ -2,26 +2,21 @@ import { useState } from 'react';
 import AnimatedContainer from '../components/AnimatedContainer';
 import SectionHeader from '../components/SectionHeader';
 import { ExternalLink, Github, Code2, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 const FrontEnd = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
 
   const nextProject = () => {
-    setDirection(1);
     setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
   };
 
   const prevProject = () => {
-    setDirection(-1);
     setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
-
-  const activeProject = projects[currentIndex];
 
   const swipeConfidenceThreshold = 10000;
   const swipePower = (offset: number, velocity: number) => {
@@ -85,7 +80,7 @@ const FrontEnd = () => {
                 drag={isActive ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.1}
-                onDragEnd={(e, { offset: dragOffset, velocity }) => {
+                onDragEnd={(_e, { offset: dragOffset, velocity }) => {
                   const swipe = swipePower(dragOffset.x, velocity.x);
                   if (swipe < -swipeConfidenceThreshold) {
                     nextProject();

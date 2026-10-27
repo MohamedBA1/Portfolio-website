@@ -1,7 +1,8 @@
 import AnimatedContainer from '../components/AnimatedContainer';
 import SectionHeader from '../components/SectionHeader';
-import { motion } from 'framer-motion';
 import { Building2, Landmark, Store, Home, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { TiltCard } from '../components/TiltCard';
+import HairlineKeyboard from '../components/HairlineKeyboard';
 
 const caseStudies = [
   {
@@ -106,13 +107,30 @@ const Analysis = () => {
       <SectionHeader 
         title="Business & System Analysis" 
         subtitle="Turning business needs into clear, practical, and scalable digital solutions."
+        centered={true}
       />
 
-      <AnimatedContainer delay={0.1} className="mb-20 text-center max-w-3xl mx-auto">
-        <p className="text-black dark:text-zinc-300 text-lg leading-relaxed">
-          I work across the full software development lifecycle—from understanding the core business needs to supporting technical implementation and analyzing the final results. My approach ensures that the systems built actually solve the right business problems.
-        </p>
-      </AnimatedContainer>
+      {/* Interactive Isometric Keyboard & Intro Hero */}
+      <div className="relative my-8 md:my-14 flex flex-col md:flex-row items-center justify-between gap-10">
+        <AnimatedContainer delay={0.1} className="flex-1 text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-semibold tracking-wider uppercase mb-6">
+            <span className="w-2 h-2 rounded-full bg-accent-400 animate-ping"></span>
+            System Architecture & Requirements
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+            Bridging Business Strategy with Technical Execution.
+          </h3>
+          <p className="text-zinc-300 text-lg leading-relaxed">
+            I work across the full software development lifecycle—from understanding the core business needs to supporting technical implementation, data-driven decisions, and analyzing the final results. My approach ensures that the systems built actually solve the right business problems.
+          </p>
+        </AnimatedContainer>
+
+        <AnimatedContainer delay={0.2} className="flex-1 w-full flex items-center justify-center">
+          <div className="w-full max-w-[420px] aspect-square relative flex items-center justify-center">
+            <HairlineKeyboard intensity={0.9} play={true} />
+          </div>
+        </AnimatedContainer>
+      </div>
 
       {/* Process Section */}
       <section className="mb-24 relative">
@@ -121,13 +139,18 @@ const Analysis = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {processSteps.map((item, idx) => (
             <AnimatedContainer key={item.step} delay={0.1 * idx}>
-              <div className="glass-card p-8 rounded-2xl h-full relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-6 text-6xl font-black text-black/20 group-hover:text-accent-500/10 transition-colors duration-500 select-none">
-                  {item.step}
+              <TiltCard className="rounded-2xl h-full" glowColor="rgba(45, 212, 191, 0.2)">
+                <div className="glass-card p-8 rounded-2xl h-full relative overflow-hidden group border border-zinc-800/60 bg-zinc-950/70 backdrop-blur-xl">
+                  <div className="absolute top-0 right-0 p-6 text-6xl font-black text-zinc-800/20 group-hover:text-accent-500/15 transition-all duration-500 select-none group-hover:scale-110">
+                    {item.step}
+                  </div>
+                  <h4 className="text-xl font-bold text-accent-400 mb-3 relative z-10 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-400"></span>
+                    {item.title}
+                  </h4>
+                  <p className="text-zinc-400 relative z-10 leading-relaxed">{item.desc}</p>
                 </div>
-                <h4 className="text-xl font-bold text-accent-400 mb-3 relative z-10">{item.title}</h4>
-                <p className="text-zinc-400 relative z-10">{item.desc}</p>
-              </div>
+              </TiltCard>
             </AnimatedContainer>
           ))}
         </div>
@@ -139,31 +162,33 @@ const Analysis = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {caseStudies.map((study, idx) => (
             <AnimatedContainer key={study.id} delay={0.1 * (idx % 4)} className={study.id === 7 ? "md:col-span-2 md:w-1/2 md:mx-auto" : ""}>
-              <div className="glass-card p-8 rounded-2xl h-full border-t-4 border-t-accent-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-black flex items-center justify-center border border-zinc-800">
-                    {study.icon}
+              <TiltCard className="rounded-2xl h-full" glowColor="rgba(20, 184, 166, 0.25)">
+                <div className="glass-card p-8 rounded-2xl h-full border border-zinc-800/60 border-t-4 border-t-accent-500 bg-zinc-950/80 backdrop-blur-xl">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-black/80 flex items-center justify-center border border-zinc-800 shadow-[0_0_15px_rgba(20,184,166,0.15)]">
+                      {study.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-zinc-100">{study.title}</h4>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-zinc-100">{study.title}</h4>
+                  
+                  <div className="mb-6">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-accent-400 bg-accent-500/10 border border-accent-500/20 px-3 py-1 rounded-full">
+                      {study.role}
+                    </span>
                   </div>
+                  
+                  <ul className="space-y-3">
+                    {study.details.map((detail, i) => (
+                      <li key={i} className="flex items-start text-zinc-300">
+                        <span className="text-accent-400 mr-3 mt-1 font-bold">›</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                
-                <div className="mb-6">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-accent-400 bg-accent-500/10 px-3 py-1 rounded-full">
-                    {study.role}
-                  </span>
-                </div>
-                
-                <ul className="space-y-3">
-                  {study.details.map((detail, i) => (
-                    <li key={i} className="flex items-start text-zinc-400">
-                      <span className="text-zinc-500 mr-3 mt-1">•</span>
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </TiltCard>
             </AnimatedContainer>
           ))}
         </div>

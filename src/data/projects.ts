@@ -14,6 +14,73 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Embryo Culture – Agricultural Solutions Website",
+    description: "A modern, responsive website for Embryo Culture, specializing in agricultural engineering, agricultural laboratories, and innovative farming solutions, with a clean, nature-inspired design that reflects the brand’s expertise and commitment to agricultural development.",
+    role: "Front-End Development",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    contribution: "Interface development, responsive implementation, biotechnology laboratory showcases, interactive services presentation, and bilingual digital experience.",
+    category: "React",
+    githubUrl: "https://github.com/MohamedBA1",
+    liveUrl: "https://embryo-culture-phi.vercel.app/",
+    images: [
+      "/embryo-culture/Screenshot_25-10-2026_12131_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_121350_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_12148_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_121430_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_121454_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_121521_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_121551_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_12165_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_12176_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_131635_embryo-culture-phi.vercel.app.jpeg",
+      "/embryo-culture/Screenshot_25-10-2026_121323_embryo-culture-phi.vercel.app.jpeg"
+    ]
+  },
+  {
+    id: 2,
+    title: "Mostakbal Sport Club – Website",
+    description: "A modern, responsive website for Mostakbal Sport Club, showcasing the club’s identity, sports activities, teams, and achievements through an engaging design and a seamless user experience across all devices.",
+    role: "Front-End Development",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    contribution: "Interface development, responsive implementation, bilingual/multilingual navigation, interactive sports sections, and front-end functionality.",
+    category: "React",
+    githubUrl: "https://github.com/MohamedBA1",
+    liveUrl: "https://al-mostaqbal-sport-club.vercel.app/",
+    images: [
+      "/club/2c3f5484-278b-4578-b54e-0731ebff1f47.png",
+      "/club/Screenshot_25-10-2026_121120_al-mostaqbal-sport-club.vercel.app.jpeg",
+      "/club/Screenshot_25-10-2026_121134_al-mostaqbal-sport-club.vercel.app.jpeg",
+      "/club/Screenshot_25-10-2026_12353_al-mostaqbal-sport-club.vercel.app.jpeg",
+      "/club/Screenshot_25-10-2026_12414_al-mostaqbal-sport-club.vercel.app.jpeg",
+      "/club/Screenshot_25-10-2026_12442_al-mostaqbal-sport-club.vercel.app.jpeg",
+      "/club/Screenshot_25-10-2026_12524_al-mostaqbal-sport-club.vercel.app.jpeg",
+      "/club/Screenshot_25-10-2026_13138_al-mostaqbal-sport-club.vercel.app.jpeg"
+    ]
+  },
+  {
+    id: 3,
+    title: "SAYA – Real Estate Development Website",
+    description: "A modern corporate website for SAYA, a real estate development company that blends authentic Arabic heritage with contemporary design, creating an elegant digital experience that reflects the brand’s identity and vision.",
+    role: "Front-End Development",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    contribution: "Interface development, responsive implementation, interaction design, Arabic typography & RTL experience, and front-end animations.",
+    category: "React",
+    githubUrl: "https://github.com/MohamedBA1",
+    liveUrl: "#",
+    images: [
+      "/saya/Screenshot_25-10-2026_162030_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_16214_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162137_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162231_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162257_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162321_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162355_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162423_localhost.jpeg",
+      "/saya/Screenshot_25-10-2026_162457_localhost.jpeg"
+    ]
+  },
+  {
+    id: 4,
     title: "Technology Solutions Website",
     description: "A modern corporate website for a technology and digital solutions company, designed to showcase its services, expertise, and digital products through a clean and professional user experience.",
     role: "Front-End Development",
@@ -35,7 +102,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 2,
+    id: 5,
     title: "Women’s Dress Rental Landing Page",
     description: "A stylish and elegant landing page for a women’s dress rental boutique, designed to showcase the collection and create a smooth, visually appealing browsing experience.",
     role: "Front-End Development",
@@ -43,27 +110,23 @@ export const projects: Project[] = [
     contribution: "Interface development, responsive implementation, interaction design, and front-end functionality.",
     category: "React",
     githubUrl: "https://github.com/MohamedBA1",
-    liveUrl: "https://glam-boutique.vercel.app/",
+    liveUrl: "https://glam-boutique-1.vercel.app",
     images: [
-      "/glam/2560cd20-7f24-4a0c-b850-19068a5ea8ec.png",
-      "/glam/325bd531-79e6-4cd3-9dd5-4b09885bcc9e.png",
-      "/glam/39dd64a7-4d8a-40b4-b657-07c47ab037cf.png",
-      "/glam/4957b2e1-e005-4979-8642-cc4478742b1a.png",
-      "/glam/62d1556f-e22c-431d-b15b-19bf183a2bc5.png",
-      "/glam/73048a90-ee31-4b72-9bb5-ee9248680ab7.png",
-      "/glam/8892020b-5d25-45f5-9b7f-842be2b4c514.png",
-      "/glam/90c6f467-9a16-4653-83d5-147aa1ff6cee.png",
-      "/glam/9b00cfcc-3ee9-4060-92f3-5805a24d9722.png",
-      "/glam/b061a98c-86db-4944-a0aa-1077d3c08202.png",
-      "/glam/b9530b80-c1fe-469a-bb86-83c6f8604835.png",
-      "/glam/d92154c8-4457-440e-94e5-1072a6c4b19b.png",
-      "/glam/efc3fcc0-09ec-446c-a631-269ebb5f7ba2.png",
-      "/glam/f284a887-6dcd-42a1-9c95-7a45e13357ec.png",
-      "/glam/f71bc697-5856-4525-a1d5-e2a5d970a2d9.png"
+      "/glam/01139bc21213b-08ba-4411b2-8031-cce044b09cd3.png",
+      "/glam/039bc13b-0812ba-44b2-8031-cce044b09cd3.png",
+      "/glam/039bc13b-081ba-44b2-8031-cce044b09cd3.png",
+      "/glam/039bc13b-08ba-44b2-8031-cce044b0229cd3.png",
+      "/glam/039bc13b-08ba-44b2-8031-cce044b0911cd3.png",
+      "/glam/039bc13b-08ba-44b2-803111-cce044b09cd3.png",
+      "/glam/039bc13b-08ba-44b2-811031-cce044b09cd3.png",
+      "/glam/039bc13b-108ba-44b2-8031-cce044b09cd3.png",
+      "/glam/039bc13b11-08ba-44b2-8031-cce044b09cd3.png",
+      "/glam/Screenshot_11-10-2026_151653_glam-boutique-1.vercel.app.jpeg",
+      "/glam/Screenshot_11-10-2026_15168_glam-boutique-1.vercel.app.jpeg"
     ]
   },
   {
-    id: 3,
+    id: 6,
     title: "Real Estate Investment Landing Page",
     description: "A modern landing page for a real estate investment company, designed to showcase investment opportunities, highlight key projects, and build trust through a clean and professional interface.",
     role: "Front-End Development",
@@ -83,7 +146,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 4,
+    id: 7,
     title: "Government Payments Management System",
     description: "A responsive government payments management system that allows users to process and track expenses through a multi-perspective dashboard, with a mobile-friendly interface for easy access and monitoring.",
     role: "Front-End Development",
@@ -112,7 +175,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 5,
+    id: 8,
     title: "Inventory Management System",
     description: "A comprehensive inventory management system built for a company operating in Egypt’s traffic sector, designed to manage, track, and monitor warehouse operations through an organized and efficient dashboard.",
     role: "Front-End Development",
@@ -131,7 +194,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 6,
+    id: 9,
     title: "Automotive Spare Parts Management System",
     description: "A complete spare parts management system for tracking inventory, adding and editing products, managing orders, and monitoring warehouse operations through a comprehensive dashboard. Fully responsive and optimized for mobile devices.",
     role: "Front-End Development",

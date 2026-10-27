@@ -185,7 +185,7 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-500 selection:bg-accent-500/30">
+    <div className="min-h-screen bg-black text-zinc-100 selection:bg-accent-500/30">
       
       {/* ── FLOATING BACK BUTTON ── */}
       <motion.div
@@ -196,7 +196,7 @@ const ProjectDetails = () => {
       >
         <Link
           to="/frontend"
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:border-accent-500/50 shadow-sm transition-all duration-300 text-sm font-semibold group"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/80 backdrop-blur-md border border-zinc-800 text-zinc-400 hover:text-white hover:border-accent-500/50 shadow-sm transition-all duration-300 text-sm font-semibold group"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           Back
@@ -252,7 +252,7 @@ const ProjectDetails = () => {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-800 dark:text-white font-semibold rounded-xl transition-all shadow-sm border border-zinc-200 dark:border-zinc-700 hover:-translate-y-1"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl transition-all shadow-sm border border-zinc-800 hover:border-zinc-700 hover:-translate-y-1"
               >
                 <Github size={18} />
                 Source Code
@@ -260,10 +260,10 @@ const ProjectDetails = () => {
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <h4 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-widest mb-4">Tech Stack</h4>
+              <h4 className="text-sm font-bold text-zinc-100 uppercase tracking-widest mb-4">Tech Stack</h4>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map(tech => (
-                  <span key={tech} className="px-3 py-1.5 text-sm font-medium bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-700 dark:text-zinc-300 shadow-sm">
+                  <span key={tech} className="px-3 py-1.5 text-sm font-medium bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-300 shadow-sm">
                     {tech}
                   </span>
                 ))}
@@ -274,12 +274,12 @@ const ProjectDetails = () => {
           {/* Right Side Info Card */}
           <motion.div variants={stagger} initial="hidden" animate="show" className="lg:col-span-5 lg:pl-10 relative">
             <TiltCard>
-              <motion.div variants={fadeUp} className="p-8 rounded-3xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-xl border border-zinc-200/50 dark:border-zinc-800/50 shadow-2xl relative z-10">
+              <motion.div variants={fadeUp} className="p-8 rounded-3xl bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/60 shadow-2xl relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center mb-6">
-                  <User size={24} className="text-accent-600 dark:text-accent-400" />
+                  <User size={24} className="text-accent-400" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-zinc-900 dark:text-white">Role & Contribution</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <h3 className="text-xl font-bold mb-4 text-white">Role & Contribution</h3>
+                <p className="text-zinc-400 leading-relaxed">
                   {project.contribution}
                 </p>
               </motion.div>
@@ -289,14 +289,14 @@ const ProjectDetails = () => {
       </div>
 
       {/* ── MODERN MASONRY GALLERY ── */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-zinc-100 dark:bg-zinc-950/50">
+      <section className="py-20 px-6 md:px-12 lg:px-20 bg-zinc-950/50">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-2">Project Gallery</h2>
-              <p className="text-zinc-500 dark:text-zinc-400">Click any image to zoom and explore details.</p>
+              <p className="text-zinc-400">Click any image to zoom and explore details.</p>
             </div>
-            <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm text-zinc-500 dark:text-zinc-400">
+            <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 shadow-sm text-zinc-400">
               <ImageIcon size={20} />
             </div>
           </div>
@@ -306,14 +306,14 @@ const ProjectDetails = () => {
             {project.images.map((img, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
+                transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="break-inside-avoid"
               >
                 <div 
-                  className="relative rounded-2xl overflow-hidden group cursor-zoom-in bg-zinc-200 dark:bg-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-200 dark:border-zinc-800/50"
+                  className="relative rounded-2xl overflow-hidden group cursor-zoom-in bg-zinc-950 border border-zinc-800/60 shadow-lg hover:shadow-[0_0_30px_rgba(20,184,166,0.25)] hover:border-accent-500/60 transition-all duration-500"
                   onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
                 >
                   <img 
@@ -322,9 +322,9 @@ const ProjectDetails = () => {
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/30 transition-colors duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300">
-                      <ZoomIn className="text-white" size={20} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-accent-500/20 border border-accent-400/40 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300 shadow-[0_0_20px_rgba(45,212,191,0.5)]">
+                      <ZoomIn className="text-accent-300" size={24} />
                     </div>
                   </div>
                 </div>

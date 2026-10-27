@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AnimatedContainer from '../components/AnimatedContainer';
 import SectionHeader from '../components/SectionHeader';
 import { Mail, Phone, MapPin, Github, Send } from 'lucide-react';
+import { TiltCard } from '../components/TiltCard';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -126,10 +127,14 @@ const Contact = () => {
 
         {/* Contact Form */}
         <AnimatedContainer delay={0.3} className="lg:w-2/3">
-          <div className="glass-card p-8 md:p-10 rounded-2xl relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-600 to-accent-400"></div>
-            
-            <h3 className="text-2xl font-bold text-zinc-100 mb-8">Send me a message</h3>
+          <TiltCard className="rounded-2xl h-full" glowColor="rgba(20, 184, 166, 0.2)">
+            <div className="glass-card p-8 md:p-10 rounded-2xl relative overflow-hidden bg-zinc-950/80 backdrop-blur-xl border border-zinc-800/60">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-600 to-accent-400"></div>
+              
+              <h3 className="text-2xl font-bold text-zinc-100 mb-8 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-accent-400 shadow-[0_0_10px_#2dd4bf]"></span>
+                Send me a message
+              </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -213,7 +218,8 @@ const Contact = () => {
               )}
             </form>
           </div>
-        </AnimatedContainer>
+        </TiltCard>
+      </AnimatedContainer>
         
       </div>
     </div>
